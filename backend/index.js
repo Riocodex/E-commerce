@@ -29,6 +29,18 @@ const storage = multer.diskStorage({
     }
 })
 
+const upload = multer({storage:storage})
+
+//creating upload endpoint for images
+
+
+app.post("/upload",upload.single('product'),(req,res)=>{
+    res.json({
+        success:1,
+        image_url:``
+    })
+})
+
 
 app.listen(port,(error)=>{
     if(!error){
