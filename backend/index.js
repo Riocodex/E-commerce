@@ -15,7 +15,16 @@ mongoose.connect("mongodb+srv://onwukachibike:NC3TpUnyNjez0oNg@cluster0.t8msajv.
  
 //Api creation
 
-app.get m
+app.get("/",(req, res)=>{
+    res.send("welcome to ecommerce tutorial")
+    
+})
+
+//image storage engine
+
+const storage = multer.diskStorage({
+    destination:"./upload"
+})
 
 
 app.listen(port,(error)=>{
