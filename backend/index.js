@@ -13,4 +13,15 @@ app.use(cors())
 //database connection wtih mongodb
 mongoose.connect("mongodb+srv://onwukachibike:NC3TpUnyNjez0oNg@cluster0.t8msajv.mongodb.net/e-commerce")
  
-//
+//Api creation
+
+app.get m
+
+
+app.listen(port,(error)=>{
+    if(!error){
+        console.log("server running on port " + port)
+    }else{
+        console.log("error : "+error)
+    }
+})
