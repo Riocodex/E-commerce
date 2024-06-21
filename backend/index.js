@@ -23,7 +23,10 @@ app.get("/",(req, res)=>{
 //image storage engine
 
 const storage = multer.diskStorage({
-    destination:"./upload"
+    destination:"./upload/images",
+    filename:(req,file,cb)=>{
+        return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+    }
 })
 
 
