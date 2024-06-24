@@ -41,6 +41,56 @@ app.post("/upload",upload.single('product'),(req,res)=>{
     })
 })
 
+//schema for creaating products
+
+const products = mongoose.model("Product",{
+    id:{
+        type: Number,
+        required: true,
+    },
+    name:{
+        type: String,
+        required: true,
+    },
+    image:{
+        type: String,
+        required: String,
+    },
+    category:{
+        type: String,
+        required: true,
+    },
+    new_price: {
+        type: Number,
+        required: true,
+    },
+    old_price:{
+        type: Number,
+        required: true,
+    },
+    date: {
+        type: Date,
+        default: Date.now,
+    },
+    avilable: {
+        type: Boolean,
+        default: true,
+    },
+})
+
+app.post('/addproduct', async( req, res)=>{
+    const product = new Product({
+        id: req.body.id,
+        name: req.body.name,
+        image: req.body.image,
+        category: req.body.category,
+        new_price:  req.body.new_price,
+        old_price: req.body.old_price,
+    });
+})
+
+
+
 
 app.listen(port,(error)=>{
     if(!error){
