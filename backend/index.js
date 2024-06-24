@@ -115,7 +115,7 @@ app.post('/removeproduct',async(req,res)=>{
     console.log("Removed")
     res.json({
         success:true,
-        name: req.body.name``
+        name: req.body.name
     })
 })
 
