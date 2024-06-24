@@ -119,6 +119,8 @@ app.post('/removeproduct',async(req,res)=>{
     })
 })
 
+//CREATING API FOF GETTING ALL PRODUCTS
+
 
 
 
