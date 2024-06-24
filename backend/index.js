@@ -91,7 +91,7 @@ app.post('/addproduct', async( req, res)=>{
     }
 
     const product = new Product({
-        id: req.body.id,
+        id:id,
         name: req.body.name,
         image: req.body.image,
         category: req.body.category,
