@@ -43,7 +43,7 @@ app.post("/upload",upload.single('product'),(req,res)=>{
 
 //schema for creaating products
 
-const products = mongoose.model("Product",{
+const Product = mongoose.model("Product",{
     id:{
         type: Number,
         required: true,
@@ -87,6 +87,13 @@ app.post('/addproduct', async( req, res)=>{
         new_price:  req.body.new_price,
         old_price: req.body.old_price,
     });
+    console.log(product);
+    await product.save();
+    console.log("saved")
+    res.json({
+        success: true,
+        name: req.body.name,
+    })
 })
 
 
