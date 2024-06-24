@@ -107,6 +107,8 @@ app.post('/addproduct', async( req, res)=>{
     })
 })
 
+//creating api for deleting products
+
 
 
 
