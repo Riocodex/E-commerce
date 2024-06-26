@@ -54,7 +54,7 @@ const AddProduct = () => {
     }
 
   return (
-    <div className='add-product>
+    <div className='add-product'>
         <div className="addproduct-itemfield">
             <p>Product Title</p>
             <input value={productDetails.name} onChange={changeHandler} type="text"  name='name' placeholder='Type here'/>
