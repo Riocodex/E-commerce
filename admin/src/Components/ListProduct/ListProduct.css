@@ -34,3 +34,7 @@
     cursor: pointer;
     margin: auto;
 }
+
+.list-product-allproducts{
+    overflow-y: auto;
+}
