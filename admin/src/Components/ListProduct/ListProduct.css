@@ -25,3 +25,12 @@
     align-items: center;
     font-weight: 500;
 }
+
+.listproduct-product-icon{
+    height: 80px;
+}
+
+.listproduct-remove-icon{
+    cursor: pointer;
+    margin: auto;
+}
