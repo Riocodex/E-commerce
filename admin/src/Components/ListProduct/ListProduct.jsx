@@ -5,6 +5,11 @@ const ListProduct = () => {
 
     const [allproducts, setAllProducts] = useState([])
     
+    const fetchInfo = async()=>{
+        await fetch('http://localhost:4000/allproducts')//getdata
+        .then((res)=>res.json())//save as jjson
+        .then((data)=>{setAllProducts(data)})//saved in usestate variaable
+    }
 
   return (
     <div className='list-product'>
