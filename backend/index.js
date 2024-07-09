@@ -211,6 +211,14 @@ app.get('/newcollections',async(req,res)=>{
     res.send(newcollection)
 })
 
+//creating endpoint for adding products in cart
+
+app.post('/addtocart',async(req,res)=>{
+    console.log(req.body)
+})
+
+//creating middleware to fetch user
+
 
 app.listen(port,(error)=>{
     if(!error){
