@@ -193,7 +193,13 @@ app.post('/login',async(req, res)=>{
                     id:user.id
                 }
             }
+            const token = jwt.sign(data,'secret_ecom');
+            res.json({success:true, token})
+        }else{
+            res.json({success:false, errors:"Wrong Password"})
         }
+    }else{
+        res.json({success:false,errors:"wrong email id"})
     }
 })
 
