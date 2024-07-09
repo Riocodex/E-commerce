@@ -136,8 +136,27 @@ const Users = mongoose.model('Users',{
         type:string,
         unique: true,
     },
-    password
+    password:{
+        type:string,
+    },
+    cartData:{
+        type:object,
+    },
+    date:{
+        type:Date,
+        default:Date.now,
+    }
 
+})
+
+//Creating the endpoint for registering the user
+
+app.post('/signup',async(req,res)=>{
+
+    let check = await Users.findOne({email:req.body.email})
+    if(check){
+        return
+    }
 })
 
 
