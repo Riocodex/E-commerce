@@ -130,17 +130,17 @@ app.get(`/allproducts`,async (req, res)=>{
 
 const Users = mongoose.model('Users',{
     name:{
-        type:string,
+        type:String,
     },
     email:{
-        type:string,
+        type:String,
         unique: true,
     },
     password:{
-        type:string,
+        type:String,
     },
     cartData:{
-        type:object,
+        type:Object,
     },
     date:{
         type:Date,
