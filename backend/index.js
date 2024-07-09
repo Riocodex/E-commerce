@@ -126,6 +126,20 @@ app.get(`/allproducts`,async (req, res)=>{
     res.send(products);
 })
 
+//schema creating for user model
+
+const Users = mongoose.model('Users',{
+    name:{
+        type:string,
+    },
+    email:{
+        type:string,
+        unique: true,
+    },
+    password
+
+})
+
 
 
 app.listen(port,(error)=>{
