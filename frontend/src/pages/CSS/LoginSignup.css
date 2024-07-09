@@ -68,5 +68,8 @@
     font-weight: 500;
 }
 
-
+.changer{
+    color: red;
+    cursor: pointer;
+}
 
