@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 //here we will use all product and use it in different components
 
-
+import all_product from "../components/Assets/all_product"
 
 export const ShopContext = createContext(null);
 const getDefaultCart = ()=>{
@@ -13,9 +13,6 @@ const getDefaultCart = ()=>{
 }
 
 const ShopContextProvider = (props) =>{
-
-    const [all_product, setAll_product] = useState([]);
-
 
     
     const [cartItems, setCartItems] = useState(getDefaultCart());
