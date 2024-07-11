@@ -234,6 +234,7 @@ app.get('/newcollections',async(req,res)=>{
 //creating endpoint for adding products in cart
 
 app.post('/addtocart',fetchUser,async(req,res)=>{
+    console.log("added",req.body.itemId)
     let userData = await Users.findOne({_id:req.user.id})
     userData.cartData[req.body.itemId] += 1;
     await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData})
