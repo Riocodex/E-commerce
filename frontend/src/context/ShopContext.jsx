@@ -27,6 +27,19 @@ const ShopContextProvider = (props) => {
             })
             .then(data => setAll_product(data))
             .catch(error => console.error('There was a problem with the fetch operation:', error));
+
+            if(localStorage.getItem('auth-token')){
+                fetch('http://localhost:4000/getcart',{
+                    method:'POST',
+                    headers:{
+                        Accept: 'application/form-data',
+                        'auth-token':`${localStorage.getItem('auth-token')}`,
+                        'Content-Type':'application/json',
+                    },
+                    body:"",
+                }).then((response)=>response.json())
+                .then((data)=>setCartItems(data))
+            }
     }, []);
 
     
