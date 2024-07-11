@@ -29,10 +29,21 @@ const ShopContextProvider = (props) => {
             .catch(error => console.error('There was a problem with the fetch operation:', error));
     }, []);
 
+    
+
     // Add item to cart
     const addToCart = (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-        console.log(cartItems);
+        if(localStorage.getItem('auth-token')){
+            fetch('http://localhost:4000/addtocart',{
+                method:'POST',
+                headers:{
+                    Accept: 'application/form-data',
+                    'auth-token': `${localStorage.getItem('auth-token')}`,
+                    
+                }
+            })
+        }
     }
 
     // Remove item from cart

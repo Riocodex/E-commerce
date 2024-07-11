@@ -211,11 +211,7 @@ app.get('/newcollections',async(req,res)=>{
     res.send(newcollection)
 })
 
-//creating endpoint for adding products in cart
 
-app.post('/addtocart',async(req,res)=>{
-    console.log(req.body)
-})
 
 //creating middleware to fetch user
     const fetchUser = async(req,res,next)=>{
@@ -234,6 +230,12 @@ app.post('/addtocart',async(req,res)=>{
             }
         }
     }
+
+//creating endpoint for adding products in cart
+
+app.post('/addtocart',fetchUser,async(req,res)=>{
+    console.log(req.body,req.user)
+})
 
 
 app.listen(port,(error)=>{
